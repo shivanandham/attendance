@@ -4,6 +4,8 @@ This application is specifically designed for students who dont want to listen t
 this application only recognizes google form's attendance links(my university's choise)
 
 this is my first attempt at a user interfaceable script
+
+this program uses fast2sms api to send sms, you will need to register and get api key:https://www.fast2sms.com/
 u can downlaod the executable file from here https://github.com/shivanandham/attendance/releases/tag/1.0
 install the file where u have access to coz its not a windows application and wont show up in start menu
 you have to manually go to the saved location to run it
