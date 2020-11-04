@@ -1,4 +1,5 @@
-this application is specifically designed for students who dont want to listen to class and yet want attendance
+#Attendance link notifier
+This application is specifically designed for students who dont want to listen to class and yet want attendance
 this application only recognizes google form's attendance links(my university's choise)
 
 this is my first attempt at a user interfaceable script
