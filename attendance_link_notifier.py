@@ -8,11 +8,12 @@ def detect(num, api):
         if pyautogui.locateOnScreen('glogo.png', confidence=0.6) != None:
             print("Detected attendance link")
             sms.send(num, api)
-            exit_code = input('1.Run again\n2.Exit')
-            if exit_code == '1':
+            exit_code = input('\n1.Run again\n2.Exit\n')
+            if exit_code == '2':
                 print('See you again')
                 exit(0)
-            if exit_code == '2':
+            if exit_code == '1':
+                print("\nOpen your class meeting's message box in teams and relax")
                 detect(num, api)
         else:
             time.sleep(1)
@@ -27,7 +28,7 @@ Enter the number to perform coresponding action.
 ''')
     
     if action == '1':
-        print("Open your class meeting's message box in teams and relax")
+        print("\nOpen your class meeting's message box in teams and relax")
         detect(num, api)
     if action == '2':
         w_data()
@@ -46,12 +47,13 @@ def get_data():
 def w_data():
     write_data = open('data.txt', 'w')
     data = []
+    print()
     num = input("Enter your phone number: ")+'\n'
     api = input("Enter your fast2sms api key: ")
     data.append(num)
     data.append(api)
     write_data.writelines(data)
-    print('Data successfully saved')
+    print('Data successfully saved\n')
 
 
 
