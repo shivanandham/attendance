@@ -4,34 +4,30 @@ import sms
 
 
 def detect(num, api):
-    i=0
     while 1:
         if pyautogui.locateOnScreen('glogo.png', confidence=0.6) != None:
             print("Detected attendance link")
-            print(i)
-            i+=1
             sms.send(num, api)
-            break
+            exit_code = input('1.Run again\n2.Exit')
+            if exit_code == '1':
+                print('See you again')
+                exit(0)
+            if exit_code == '2':
+                detect(num, api)
         else:
-            print("I am unable to see it")
-            print(i)
-            i+=1
             time.sleep(1)
 
 
 def start():
     num, api = get_data()
-    action = input('''
-    
-    
-Welcome to attendance notifier.
+    action = input('''Welcome to attendance notifier.
 Enter the number to perform coresponding action.
 1.Start detection
 2.Change mobile number and api key
-
 ''')
     
     if action == '1':
+        print("Open your class meeting's message box in teams and relax")
         detect(num, api)
     if action == '2':
         w_data()
